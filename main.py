@@ -8,9 +8,15 @@ from src.bot import Bot
 from src.conversation import Conversation, Question
 
 
+config = {
+  "email":"<example_gmail>",
+  "password":"<example_password>",
+  "access_token":"<example_token>"
+}
+
 def main():
     conversation = Conversation(
-        Chatbot({"session_token": getenv("CHATGPT_TOKEN")}),
+        Chatbot(config=config),
         load_brainwash()
     )
 
