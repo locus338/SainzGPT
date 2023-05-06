@@ -10,10 +10,6 @@ from src.conversation import Conversation, Question
 from flask import Flask, render_template
 app = Flask(__name__, template_folder="Templates")
 
-@app.route('/')
-def index():
-    return render_template('index.html') 
-
 config = {
   "email":"locus338@gmail.com",
   "password":"",
