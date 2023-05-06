@@ -7,6 +7,12 @@ from revChatGPT.V1 import Chatbot
 from src.bot import Bot
 from src.conversation import Conversation, Question
 
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello World!"
 
 config = {
   "email":"locus338@gmail.com",
