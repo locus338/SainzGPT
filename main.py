@@ -53,7 +53,7 @@ def load_brainwash() -> list[Question]:
 def index():
     return 'Hello! World'
 
-if __name__ == "__main__":
-    main()
+if __name__ == "__main__":  
     stay()
+    main()
     bot.run(getenv("DISCORD_TOKEN"))
