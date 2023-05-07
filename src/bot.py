@@ -53,7 +53,6 @@ class Bot(InteractionBot):
         await message.add_reaction(loading)
         
         try:
-            print(reply)
             print("==============================[SUCCESS]==============================")
             await message.add_reaction(tick)
             #print(reply)
