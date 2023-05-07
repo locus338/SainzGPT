@@ -60,7 +60,7 @@ class Bot(InteractionBot):
         except Exception as e: 
             print("==============================[ERROR]==============================")
             e = str(e)
-            await message.remove_reaction(loading,client.user)
+            await message.remove_reaction(self.user)
             await message.add_reaction(cross)
         
         prompt = re.sub(r'<@([0-9]+)>', "", message.content)
