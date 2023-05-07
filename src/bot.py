@@ -60,7 +60,7 @@ class Bot(InteractionBot):
         await message.reply(response)
 
         if message.author == client.user:
-        return
+            return
         
         if message.channel.id == channel_id:
             await message.add_reaction(loading)
