@@ -51,6 +51,8 @@ class Bot(InteractionBot):
         
         await message.add_reaction(loading)
         
+        try:
+            pass
         except Exception as e: 
             print("==============================[ERROR]==============================")
             e = str(e)
