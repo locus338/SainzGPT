@@ -54,12 +54,6 @@ def load_brainwash() -> list[Question]:
 def index():
     return 'Hello! World'
 
-@bot.event
-async def on_message(message):
-    #if message.content == '!refresh' and message.author.id == config['discord_admin_id']: chatbot.refresh_session(); await message.add_reaction("🔄"); print("refresh session"); return
-    #if message.content == '!restart' and message.author.id == config['discord_admin_id']: os.execl(file, *sys.argv);return
-    if message.content == '!reset': chatbot.reset();await message.add_reaction("💪"); print("reset chat"); return 
-
 if __name__ == "__main__":  
     stay()
     main()
