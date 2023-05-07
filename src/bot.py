@@ -7,7 +7,7 @@ from disnake.ext.commands import InteractionBot
 
 from .conversation import Conversation, ConversationStatus, Question
 
-loading = "✅" 
+loading = "" 
 cross = "❌" 
 
 async def keep_typing(channel: Messageable):
@@ -56,9 +56,8 @@ class Bot(InteractionBot):
         except Exception as e: 
             print("==============================[ERROR]==============================")
             e = str(e)
-            await message.remove_reaction(self.user)
             await message.add_reaction(cross)
-            await message.remove_reaction(loading)
+            await message.remove_reaction(loading,self.user)
         
         prompt = re.sub(r'<@([0-9]+)>', "", message.content)
 
