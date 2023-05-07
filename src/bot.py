@@ -57,7 +57,7 @@ class Bot(InteractionBot):
             print("==============================[SUCCESS]==============================")
             await message.add_reaction(tick)
             #print(reply)
-            except Exception as e: 
+        except Exception as e: 
             print("==============================[ERROR]==============================")
             e = str(e)
             await message.remove_reaction(loading,client.user)
