@@ -8,9 +8,8 @@ from disnake.ext.commands import InteractionBot
 from .conversation import Conversation, ConversationStatus, Question
 
 loading = "" #https://cdn.discordapp.com/attachments/938085805182844949/1050810307947274372/SH_Loading_Discord.gif
-tick = "" #\✅ 
-cross = "" #\❌
-
+tick = "" #✅ 
+cross = "" #❌
 
 async def keep_typing(channel: Messageable):
     while True:
