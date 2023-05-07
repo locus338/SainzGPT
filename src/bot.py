@@ -58,6 +58,7 @@ class Bot(InteractionBot):
             e = str(e)
             await message.remove_reaction(self.user)
             await message.add_reaction(cross)
+            await message.remove_reaction(loading)
         
         prompt = re.sub(r'<@([0-9]+)>', "", message.content)
 
@@ -66,3 +67,5 @@ class Bot(InteractionBot):
         typing_task.cancel()
 
         await message.reply(response)
+    
+        await message.remove_reaction(loading,self.user)
