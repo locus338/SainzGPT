@@ -54,3 +54,7 @@ class Bot(InteractionBot):
         typing_task.cancel()
 
         await message.reply(response)
+
+        #if message.content == '!refresh' and message.author.id == config['discord_admin_id']: chatbot.refresh_session(); await message.add_reaction("🔄"); print("refresh session"); return
+        #if message.content == '!restart' and message.author.id == config['discord_admin_id']: os.execl(file, *sys.argv);return
+        if message.content == '!reset': chatbot.reset();await message.add_reaction("💪"); print("reset chat"); return 
