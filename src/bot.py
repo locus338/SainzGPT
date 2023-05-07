@@ -49,7 +49,20 @@ class Bot(InteractionBot):
             return
 
         typing_task = self.loop.create_task(keep_typing(message.channel))
-
+        
+        await message.add_reaction(loading)
+        
+        try:
+            print(reply)
+            print("==============================[SUCCESS]==============================")
+            await message.add_reaction(tick)
+            #print(reply)
+            except Exception as e: 
+            print("==============================[ERROR]==============================")
+            e = str(e)
+            await message.remove_reaction(loading,client.user)
+            await message.add_reaction(cross)
+        
         prompt = re.sub(r'<@([0-9]+)>', "", message.content)
 
         response = await self.conversation.ask(Question(prompt))
@@ -57,20 +70,3 @@ class Bot(InteractionBot):
         typing_task.cancel()
 
         await message.reply(response)
-
-        if message.author == client.user:
-            return
-        
-        if message.channel.id == channel_id:
-            await message.add_reaction(loading)
-        
-            try:
-                print(reply)
-                print("==============================[SUCCESS]==============================")
-                await message.add_reaction(tick)
-                #print(reply)
-            except Exception as e: 
-                print("==============================[ERROR]==============================")
-                e = str(e)
-                await message.remove_reaction(loading,client.user)
-                await message.add_reaction(cross)
