@@ -7,7 +7,7 @@ from disnake.ext.commands import InteractionBot
 
 from .conversation import Conversation, ConversationStatus, Question
 
-loading = "<a:SH_Loading_Discord:1104732479975346306>" 
+loading = "<a:loading:1051419341914132554>" 
 cross = "❌" 
 
 async def keep_typing(channel: Messageable):
